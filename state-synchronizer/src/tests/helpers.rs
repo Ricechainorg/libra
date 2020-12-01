@@ -152,6 +152,11 @@ impl ExecutorProxyTrait for MockExecutorProxy {
         self.storage.read().get_epoch_ending_ledger_info(version)
     }
 
+    fn get_vm_timestamp_for_version(&self, version: u64) -> Result<u64> {
+        // Only used for logging purposes so no point in mocking
+        Ok(0)
+    }
+
     fn load_on_chain_configs(&mut self) -> Result<()> {
         Ok(())
     }
